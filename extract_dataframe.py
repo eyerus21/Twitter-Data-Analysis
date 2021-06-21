@@ -32,12 +32,7 @@ class TweetDfExtractor:
     """
     def __init__(self, tweets_list):
         
-        self.tweets_list = tweets_list
-
-    # def get_column_values(self, column_name):
-    #         return [x.get(column_name, None) for x in self.tweets_list]
-
-       
+        self.tweets_list = tweets_lis     
 
 
     # an example function
