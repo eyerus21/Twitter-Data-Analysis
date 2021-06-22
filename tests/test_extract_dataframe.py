@@ -72,11 +72,10 @@ class TestTweetDfExtractor(unittest.TestCase):
         self.assertEqual(self.df.find_retweet_count(), [0, 0, 0, 0, 0])
 
     def test_find_hashtags(self):
-<<<<<<< HEAD
+        
         self.assertEqual(self.df.find_hashtags(), [[], [], [{'text': 'red4research', 'indices': [103, 116]}], [], []])
-=======
-         self.assertEqual(self.df.find_hashtags(), [ [], [],[{'indices': [103, 116], 'text': 'red4research'}],[], []])
->>>>>>> make_unittest
+
+        self.assertEqual(self.df.find_hashtags(), [ [], [],[{'indices': [103, 116], 'text': 'red4research'}],[], []])
 
     def test_find_mentions(self):
          self.assertEqual(self.df.find_mentions(), '')
