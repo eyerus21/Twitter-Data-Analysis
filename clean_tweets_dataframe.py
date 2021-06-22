@@ -52,7 +52,11 @@ class Clean_Tweets:
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         return df
+=======
+        return df
+>>>>>>> make_unittest
 =======
         return df
 >>>>>>> make_unittest
