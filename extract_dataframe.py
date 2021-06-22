@@ -32,7 +32,7 @@ class TweetDfExtractor:
     """
     def __init__(self, tweets_list):
         
-        self.tweets_list = tweets_lis     
+        self.tweets_list = tweets_list     
 
 
     # an example function
@@ -61,7 +61,16 @@ class TweetDfExtractor:
             
             return polarity, subjectivity
 
-        
+    def is_sensitive(self)->list:
+        isSensitive = []
+        for sensitive in self.tweets_list:
+            try:
+                is_sensitive = sensitive['possibly_sensitive']
+            except KeyError:
+                is_sensitive = None
+            isSensitive += [is_sensitive]
+        return isSensitive
+
     def find_lang(self)->list:
         lang = []
         for i in self.tweets_list:
@@ -100,13 +109,7 @@ class TweetDfExtractor:
             friends_count.append(i['user']['friends_count'])
         return friends_count    
 
-    def is_sensitive(self)->list:
-        try:
-            is_sensitive = [x['possibly_sensitive'] for x in self.tweets_list]
-        except KeyError:
-            is_sensitive = None
-
-        return is_sensitive
+    
 
     def find_favourite_count(self)->list:
         favourite_count=[]
@@ -146,7 +149,7 @@ class TweetDfExtractor:
 
     
         
-   def get_tweet_df(self, save=False)->pd.DataFrame:
+    def get_tweet_df(self, save=False)->pd.DataFrame:
         """required column to be generated you should be creative and add more features"""
         
         columns = ['created_at', 'source', 'original_text','polarity','subjectivity', 'lang', 'favorite_count', 'retweet_count', 
@@ -185,5 +188,3 @@ if __name__ == "__main__":
     _, tweet_list = read_json("/home/eyerusalem/mine/Twitter-Data-Analysis/data/covid19.json")
     tweet = TweetDfExtractor(tweet_list)
     tweet_df = tweet.get_tweet_df() 
-
-    # use all defined functions to generate a dataframe with the specified columns above
