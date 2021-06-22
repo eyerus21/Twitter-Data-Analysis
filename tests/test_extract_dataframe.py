@@ -87,8 +87,3 @@ class TestTweetDfExtractor(unittest.TestCase):
 if __name__ == '__main__':
 	unittest.main()
 
-<<<<<<< HEAD
-    
-=======
-    
->>>>>>> cd80b097acac55ab694f9f5ee8b4ba819aebd6db
