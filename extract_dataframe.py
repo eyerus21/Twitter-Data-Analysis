@@ -71,9 +71,7 @@ class TweetDfExtractor:
             isSensitive += [is_sensitive]
         return isSensitive
 
-     
-     
-        
+
     def find_lang(self)->list:
         lang = []
         for i in self.tweets_list:

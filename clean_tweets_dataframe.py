@@ -50,4 +50,3 @@ class Clean_Tweets:
         """
         df = df[df["lang"] == "en"]
 
-        return df
