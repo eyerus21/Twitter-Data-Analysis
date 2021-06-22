@@ -50,4 +50,8 @@ class Clean_Tweets:
         """
         df = df[df["lang"] == "en"]
 
+<<<<<<< HEAD
         return df
+=======
+        return df
+>>>>>>> make_unittest
