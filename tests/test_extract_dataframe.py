@@ -19,7 +19,7 @@ class TestTweetDfExtractor(unittest.TestCase):
 		Args:
         -----
 			unittest.TestCase this allows the new class to inherit
-			from the unittest modul
+			from the unittest module
 	"""
 
     def setUp(self) -> pd.DataFrame:
@@ -30,14 +30,14 @@ class TestTweetDfExtractor(unittest.TestCase):
     def test_find_statuses_count(self):
         self.assertEqual(self.df.find_statuses_count(), [204051, 3462, 6727, 45477, 277957])
 
-#     def test_find_full_text(self):
-#         text = ['RT @TelGlobalHealth: "Africa is in the midst of a full-blown third wave," @MoetiTshidi said. "The sobering trajectory of surging cases shou…',
-#  'RT @Senators: Expect to see some different kind of shots at @CdnTireCtr next week!\n\xa0\nDo your part and get your #Covid19 vaccine.\n\nDETAILS:…',
-#  'RT @stkirsch: **BIG NEWS**: Up to 25,800 may have been killed by the COVID vaccine.  I bet that this is a lower bound on the number killed…',
-#  'Alpha, Beta &amp; Delta: We break down everything you need to know about the three #COVID19 variants that have been det… https://t.co/IN5AiroJ0U',
-#  'Despite #COVID19 lockdowns and travel restrictions, still nearly 3 million people fled their homes from war, violen… https://t.co/DA1QZ7Ff06']
-
-     #   self.assertEqual(self.df.find_full_text(), text)
+    def test_find_full_text(self):
+         text = ['RT @TelGlobalHealth: 🚨Africa is \"in the midst of a full-blown third wave\" of coronavirus, the head of @WHOAFRO has warned\n\nCases have risen\u2026', 
+                "RT @globalhlthtwit: Dr Moeti is head of WHO in Africa, and one of the best public health experts and leaders I know. Hers is a desperate re\u2026", 
+                'RT @NHSRDForum: Thank you @research2note for creating this amazing campaign &amp; turning social media #red4research today. @NHSRDFORUM is all\u2026',
+                'RT @HighWireTalk: Former Pfizer VP and Virologist, Dr. Michael Yeadon, is one of the most credentialed medical professionals speaking out a\u2026',
+                'RT @PeterHotez: I think it\u2019s important that we don\u2019t sell COVAX short. It still has a lot going for it and is innovative in its design. But\u2026'
+        ] 
+         self.assertEqual(self.df.find_full_text(), text)
 
     def test_find_sentiments(self):
         self.assertEqual(self.df.find_sentiments(self.df.find_full_text()), ([0.0,0.13333333333333333,0.3166666666666667,0.16666666666666666,0.3,], [0.0,0.45555555555555555,0.48333333333333334,0.16666666666666666,0.7666666666666666,]))
