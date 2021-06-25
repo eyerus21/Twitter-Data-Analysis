@@ -19,7 +19,7 @@ class TestTweetDfExtractor(unittest.TestCase):
 		Args:
         -----
 			unittest.TestCase this allows the new class to inherit
-			from the unittest module
+			from the unittest modul
 	"""
 
     def setUp(self) -> pd.DataFrame:
